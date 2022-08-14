@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: nginx-deploy
-          image: nginx:stable
+          image: nginx
   replicas: 3
   selector:
     matchLabels:
