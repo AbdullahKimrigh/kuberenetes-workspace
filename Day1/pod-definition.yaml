@@ -1,8 +1,8 @@
-appversion: v1
-kind: pod
+apiversion: v1
+kind: Pod
 metadata:
-  namE: myfirstpod
-  label:
+  name: myfirstpod
+  labels:
     app: myfirstpod
     type: network
 spec:

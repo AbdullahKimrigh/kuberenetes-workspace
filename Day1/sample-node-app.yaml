@@ -1,0 +1,10 @@
+apiversion: v1
+kind: Pod
+metadata:
+  name: samplenodeapp
+  labels:
+    type: frontend
+spec:
+  containers:
+    - name: samplenodeapp
+      image: saurabh2106/sample-node-app
