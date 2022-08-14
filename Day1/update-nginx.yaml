@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: deployment
-    labels:
-     app: myreplicaset
+  name: deployment
+  labels:
+    app: myreplicaset
 spec:
   template:
     metadata:
@@ -17,4 +17,4 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      type: web
+      app: web
