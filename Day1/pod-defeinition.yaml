@@ -1,0 +1,11 @@
+appversion: v1
+kind: pod
+metadata:
+  namE: myfirstpod
+  label:
+    app: myfirstpod
+    type: network
+spec:
+  containers:
+    - name: nginx
+      image: nginx
