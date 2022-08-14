@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadat:
+    name: deployment
+    labels:
+      app: myreplicaset
+      kind: frontend
+spec:
+  template: #pods information
+    metadata:
+      name: myfirstpod
+      labels:
+        app: myfirstpod
+        type: frontend
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+  replicas: 3
+  selector: #depends on replica that select to which pod by its label
+    matchLabels:
+      type: frontend
