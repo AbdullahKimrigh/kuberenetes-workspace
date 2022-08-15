@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: update-busybox-image
+  labels:
+    app: busybox
+spec:
+  template:
+    metadata:
+      name: busybox-app
+      labels:
+        app: busybox
+    spec:
+      containers:
+        - name: busybox-deploy
+          image: ubuntu
+          command:
+            - sleep
+            - "3600"
+  replicas: 3
+  selector:
+    matchLabels:
+      app: busybox
