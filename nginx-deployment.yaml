@@ -16,9 +16,9 @@ spec:
           image: nginx:1.8
   replicas: 5
   startegy:
-  type: RollingUpdate
-  rollingUpdate:
-    maxUnavailable: 1  
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1  
   selector:
     matchLabels:
       app: webshop
