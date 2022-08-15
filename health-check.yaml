@@ -8,20 +8,12 @@ spec:
   containers:
     - name: healthy-pod
       image: nginx
-      ports:
-      - containerPort: 8080
-
   livenessProbe:
-    tcpSocket:
-      port: 8080
     initialDelaySeconds: 5 #initial delay for liveness probe
     timeoutSeconds: 1 #timeout for liveness probe
     periodSeconds: 3 #kubelet should perform a liveness probe
     failureThreshold: 5 #maximum restarts
-
   readinessProbe:
-    tcpSocket:
-      port: 8080
     initialDelaySeconds: 5 #initial delay for readiness probe:
     timeoutSeconds: 1 #timeout for readiness probe
     periodSeconds: 3 #kubelet should perform a readiness probe
