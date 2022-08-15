@@ -9,13 +9,13 @@ spec:
     - name: healthy-pod
       image: nginx
 
-  livenessProbe:
+  LivenessProbe:
     initialDelaySeconds: 5 #initial delay for liveness probe
     timeoutSeconds: 1 #timeout for liveness probe
     periodSeconds: 3 #kubelet should perform a liveness probe
     failureThreshold: 5 #maximum restarts
 
-  readinessProbe:
+  ReadinessProbe:
     initialDelaySeconds: 5 #initial delay for readiness probe:
     timeoutSeconds: 1 #timeout for readiness probe
     periodSeconds: 3 #kubelet should perform a readiness probe
