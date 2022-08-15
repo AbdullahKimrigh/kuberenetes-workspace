@@ -1,0 +1,23 @@
+apiversion: v1
+kind: Pod
+metadata:
+  name: healthy-pod
+  labels:
+    app: myfirstpod
+    type: network
+spec:
+  containers:
+    - name: healthy-pod
+      image: nginx
+
+  livenessProbe:
+    initialDelaySeconds: 5 #initial delay for liveness probe
+    timeoutSeconds: 1 #timeout for liveness probe
+    periodSeconds: 3 #kubelet should perform a liveness probe
+    failureThreshold: 5 #maximum restarts
+
+  readinessProbe:
+    initialDelaySeconds: 5 #initial delay for readiness probe:
+    timeoutSeconds: 1 #timeout for readiness probe
+    periodSeconds: 3 #kubelet should perform a readiness probe
+    failureThreshold: 6 #maximum restarts
