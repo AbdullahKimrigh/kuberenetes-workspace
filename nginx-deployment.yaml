@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadat:
+    name: deployment
+    labels:
+      service: nginx
+spec:
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: webshop
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.8
+  replicas: 5
+  selector:
+    matchLabels:
+      app: webshop
+  startegy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
