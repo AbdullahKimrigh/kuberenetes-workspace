@@ -3,8 +3,7 @@ kind: Pod
 metadata:
   name: healthy-pod
   labels:
-    app: myfirstpod
-    type: network
+    app: healthypod
 spec:
   containers:
     - name: healthy-pod
