@@ -1,0 +1,16 @@
+## this is the example of clusterIP
+apiVersion: v1
+kind: Service
+metadata:
+  name: cluster-ip-service
+  labels:
+    app: redis
+spes:
+  type: ClusterIP
+  ports:
+    - name: redis-port
+      port: 6379 #service port
+      targetPort: 6379 #pods port
+      protocol: TCP
+  selector:
+    app: redis
