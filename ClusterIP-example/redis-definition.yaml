@@ -12,10 +12,10 @@ spec:
     spec:
       containers:
         - name: redis
-          image: redis:latest
+          image: redis:4-alpine
           ports:
           - containerPort: 6379
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: redis
