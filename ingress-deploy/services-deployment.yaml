@@ -5,7 +5,7 @@ metadata:
   name: nginx-svc
   labels:
     app: svc-app
-spes:
+spec:
   type: NodePort
   ports:
     - name: http #service port
