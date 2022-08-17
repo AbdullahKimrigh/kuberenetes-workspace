@@ -15,3 +15,4 @@ spec:
           name: lap-pod
       volumeMounts:
         - mountPath: /usr/share/nginx/html
+          name: nginx-vol
