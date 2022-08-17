@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PresistentVolumeClaim
+metadata:
+  name: lab-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: local-path

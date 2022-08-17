@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadat:
+    name: deployment
+    labels:
+      app: myreplicaset
+      kind: frontend
+spec:
+  template:
+    metadata:
+      name: myfirstpod
+      labels:
+        app: myfirstpod
+        type: frontend
+    spec:
+      volumes:
+        - name: nginc-col
+          persistentVolumeClaim:
+            claimName: lab-pvc
+      containers:
+        - name: nginx
+          image: nginx
+          volumeMounts:
+            - mountPath: /data
+              name: nginx-vol
+  replicas: 3
+  selector:
+    matchLabels:
+      type: frontend
