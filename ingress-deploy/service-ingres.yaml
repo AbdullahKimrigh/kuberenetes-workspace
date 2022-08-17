@@ -1,17 +1,16 @@
-## this is the example of NodePort
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-svc
+  name: svc-app
   labels:
     app: svc-app
 spes:
   type: NodePort
   ports:
-    - name: http #service port
+    - name: http
       port: 80
-      targetPort: 80 # pods port
-      nodePort: 31089 #nodes port
+      targetPort: 80
+      nodePort: 31089
       protocol: TCP
   selector:
     app: nginx-deploy

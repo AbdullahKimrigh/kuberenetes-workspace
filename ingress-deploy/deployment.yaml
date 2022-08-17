@@ -7,10 +7,9 @@ metadata:
 spec:
   template: 
     metadata:
-      name: myfirstpod
+      name: nginx
       labels:
         app: nginx
-        type: frontend
     spec:
       containers:
         - name: nginx
@@ -18,4 +17,4 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      type: frontend
+      app: nginx-deploy
