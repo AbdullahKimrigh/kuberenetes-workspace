@@ -4,7 +4,7 @@ metadata:
   name: lab-pod
 spec:
   volumes:
-    - name: task-pv-storage
+    - name: nginx-vol
       persistentVolumeClaim:
         claimName: lab-pvc
   containers:
