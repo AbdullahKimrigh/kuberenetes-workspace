@@ -11,7 +11,7 @@ spec:
     - name: http #service port
       port: 80
       targetPort: 80 # pods port
-      nodePort: 3200 #nodes port
+      nodePort: 32000 #nodes port
       protocol: TCP
   selector:
     app: nginx
