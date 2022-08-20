@@ -3,13 +3,13 @@ kind: Deployment
 metadata:
     name: deployment
     labels:
-      service: nginx
+      k8s-app: kube-dns
 spec:
   template:
     metadata:
       name: nginx
       labels:
-        app: webshop
+        k8s-app: kube-dns
     spec:
       containers:
         - name: nginx
@@ -21,4 +21,4 @@ spec:
       maxUnavailable: 1  
   selector:
     matchLabels:
-      app: webshop
+      k8s-app: kube-dns
